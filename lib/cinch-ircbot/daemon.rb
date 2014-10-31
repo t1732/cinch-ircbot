@@ -20,7 +20,7 @@ class Daemon
 
   def daemonize
     begin
-      Process.daemon(true, false)
+      Process.daemon(true, true)
       open(@pid_file, 'w') {|f| f << Process.pid} if @pid_file
     rescue => e
       STDERR.puts "[ERROR][#{self.class.name}.daemonize] #{e}"
