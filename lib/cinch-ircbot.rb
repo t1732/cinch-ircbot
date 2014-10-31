@@ -1,6 +1,5 @@
 require 'bundler/setup'
 require 'cinch'
-require 'yaml'
 
 require_relative 'cinch-ircbot/bot_config'
 require_relative 'cinch-ircbot/bot'
