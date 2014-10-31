@@ -15,7 +15,6 @@ class UrlTitle
 
   def listen(msg)
     urls = URI.extract(msg.message, "http")
-    msg.channel.notice "title Loading....."
     titles = urls.collect{|url| get_title(url) }
     titles.each do |title|
       msg.channel.notice Encoder.encode(" => #{title}")
