@@ -6,6 +6,7 @@ require_relative 'cinch-ircbot/bot'
 require_relative 'cinch-ircbot/daemon'
 require_relative 'cinch-ircbot/encoder'
 require_relative 'cinch-ircbot/plugins/hello'
+require_relative 'cinch-ircbot/plugins/url_title'
 
 module CinchIrcbot
   extend self
