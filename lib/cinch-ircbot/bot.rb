@@ -28,7 +28,9 @@ class Bot
         c.nick     = irc_options[:nick]
         c.channels = irc_options[:channels].collect{|o| Encoder.encode(o) }
         c.verbose  = cinch_options[:verbose]
-        c.plugins.plugins = cinch_options[:plugins].collect{|n| Object.const_get(n.capitalize) }
+        c.plugins.plugins = cinch_options[:plugins].collect{|n|
+          Object.const_get(n.split("_").collect(&:capitalize).join)
+        }
       end
 
       trap "SIGINT" do
